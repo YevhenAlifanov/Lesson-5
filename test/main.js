@@ -16,7 +16,6 @@ describe('open Citrus.ua', function() {
     let expectedRes = 'https://www.citrus.ua/';
     assert.deepStrictEqual(actualRes, expectedRes, ('Oshipka!'));
 
-
     await driver.quit();
     });
   });

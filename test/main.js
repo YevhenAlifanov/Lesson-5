@@ -14,7 +14,7 @@ describe('open Citrus.ua', function() {
     await driver.findElement(By.className("LC20lb MBeuO DKV0Md")).click();
     let actualRes = await driver.getCurrentUrl();
     let expectedRes = 'https://www.citrus.ua/';
-    assert.deepStrictEqual(actualRes, expectedRes, ('Oshipka!'));
+    assert.deepStrictEqual(actualRes, expectedRes, ('Expected error!'));
 
     await driver.quit();
     });

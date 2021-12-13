@@ -2,7 +2,7 @@ let assert = require('assert');
 const {Builder, By, Key, until} = require('selenium-webdriver');
 describe('open Citrus.ua', function() {
   describe('equel of link', function() {
-    it('should return -1 when the value is not present', async function() {
+    it('should compare link with expected one', async function() {
       
     let driver = await new Builder().forBrowser('chrome').build();
 
@@ -11,10 +11,10 @@ describe('open Citrus.ua', function() {
     
 
     await driver.findElement(By.name('q')).sendKeys('Citrus.ua', Key.ENTER);
-    await driver.findElement(By.className("LC20lb MBeuO DKV0Md")).click();
+    await driver.findElement(By.className("LC20lb MBeuO DKV0Md")).click();//поменять селектор
     let actualRes = await driver.getCurrentUrl();
     let expectedRes = 'https://www.citrus.ua/';
-    assert.deepStrictEqual(actualRes, expectedRes, ('Expected error!'));
+    assert.deepStrictEqual(actualRes, expectedRes, ('Error! Links are not equel!'));
 
     await driver.quit();
     });
